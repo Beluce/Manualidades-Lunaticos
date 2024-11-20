@@ -11,9 +11,9 @@ if ($stmt = $conexion->prepare($consulta_sql)) {
     $stmt->bind_param("sss", $usuario, $correo, $contrasena);
     
     if ($stmt->execute()) {
-        header("Location: ../admin.php?status=success");
+        header("Location: ../admin?status=success");
     } else {
-        header("Location: ../admin.php?status=insert_error");
+        header("Location: ../admin?status=insert_error");
     }
 
     $stmt->close();
